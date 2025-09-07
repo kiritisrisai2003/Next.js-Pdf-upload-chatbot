@@ -1,40 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+📄 PDF Q&A Chatbot (Next.js + OpenAI)
 
-## Getting Started
+A secure PDF Question & Answer Chatbot built with Next.js, OpenAI API, and an in-memory vector search.
+Upload any PDF, ask questions, and get context-aware answers from the document.
 
-First, run the development server:
+🚀 Features
 
-```bash
+📂 Upload PDF and automatically parse text
+
+🧠 Embeddings + Vector Search (cosine similarity)
+
+🤖 Answering with GPT-4 using only PDF context
+
+🔐 API Key Protection with internal headers
+
+🎨 Beautiful Tailwind UI with modern layout
+
+🛠 Tech Stack
+
+Frontend: Next.js (React + TailwindCSS)
+
+Backend: Next.js API Routes + Multer (for uploads)
+
+AI: OpenAI text-embedding-3-large + gpt-4
+
+Storage: In-memory vector store (no DB required)
+
+
+
+⚙️ Setup & Installation
+
+1️⃣ Clone repo
+
+git clone https://github.com/yourusername/pdf-qa-chatbot.git
+cd pdf-qa-chatbot
+
+
+2️⃣ Install dependencies
+
+npm install
+# or
+yarn install
+
+
+3️⃣ Add environment variables in .env.local
+
+OPENAI_API_KEY="your-openai-api-key"
+INTERNAL_API_KEY=""          # Server-side secret
+NEXT_PUBLIC_INTERNAL_API_KEY=""  # Used by frontend (public)
+
+
+⚠️ NEXT_PUBLIC_ variables are exposed to the client. That’s why we validate them on the backend by checking against INTERNAL_API_KEY.
+
+4️⃣ Run development server
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+App runs on 👉 http://localhost:3000
